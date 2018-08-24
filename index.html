@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test PUCP</title>
+
+    <!-- Bootstrap -->
+   <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script  src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script  src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"> </script>
+	<link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+  		<div id="app">
+  			
+	    <div class="container-fluid">
+	    	<div class="header" style="text-align: center;margin-bottom: 15px;">
+	    		<img src="https://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-rounded" alt="Cinque Terre" width="125" height="125"> 
+	    	</div>
+	    	<div class="container" style="margin-bottom: 15px; ">
+	    		<div class="col-lg-3" style="padding: 15px; background-color: black;color: white; text-align: center;margin-right: 5px">menu 1</div>
+	    		<div class="col-lg-3" style="padding: 15px; background-color: black;color: white; text-align: center;margin-right: 5px">menu 2</div>
+	    		<div class="col-lg-3" style="padding: 15px; background-color: black;color: white; text-align: center;margin-right: 5px">menu 3</div>
+	    		<div class="col-lg-3" style="padding: 15px; background-color: black;color: white; text-align: center;">menu 4</div>
+	    	</div>
+	    </div>
+	    <div class="container text-center">
+	    	<div class="form-group col-lg-6 col-xs-12">
+			    <input type="text" class="form-control" placeholder="EU" v-model="eu">
+			</div>
+	    	<div class="form-group col-lg-6 col-xs-12">
+			    <input type="text" class="form-control" placeholder="USD" v-model="usd" disabled>
+			</div>
+	    	<button class="btn btn-info" @click="calculateMoneyChange()">Calculate</button>
+	    </div>
+
+	    <div class="container">
+	    	<h3 class="text-center">listado de historicos a la Fecha: {{ date_change_money }}</h3>
+
+	    	<div class="col-lg-6 text-center" v-for="(historic_price,divisa) in historic_prices" style="border-radius: 2px; border: 1px solid darkgrey; padding: 15px; ">
+	    		<b>{{ divisa }}:</b> {{ historic_price }}
+	    	</div>
+	    </div>
+	    <div class="container">
+	    	<div class="col-lg-3">
+	    		<h5>Subtitle</h5>
+	    		<p style="text-align: justify;">
+					Lorem Ipsum es simplemente texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la revistió para hacer un libro tipo de espécimen. Ha sobrevivido no solo cinco.
+				</p>
+	    	</div>
+	    	<div class="col-lg-3">
+	    		<h5>Subtitle</h5>
+	    		<p style="text-align: justify;">
+					Lorem Ipsum es simplemente texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la revistió para hacer un libro tipo de espécimen. Ha sobrevivido no solo cinco
+				</p>
+	    	</div>
+	    	<div class="col-lg-3">
+	    		<h5>Subtitle</h5>
+	    		<p style="text-align: justify;">
+					Lorem Ipsum es simplemente texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la revistió para hacer un libro tipo de espécimen. Ha sobrevivido no solo cinco. 
+				</p>
+	    	</div>
+	    	<div class="col-lg-3">
+	    		<div class="row">
+	    			<h5>Subtitle</h5>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-lg-4" style="height: 50px;width: 50px; background-color: lightgrey;margin-right: 5px;" ></div>
+	    			<div class="col-lg-4" style="height: 50px;width: 50px; background-color: lightgrey; margin-right: 5px;"></div>
+	    			<div class="col-lg-4" style="height: 50px;width: 50px; background-color: lightgrey"></div>
+	    		</div>
+	    	</div>
+	    </div>
+  		</div>
+  		<script src="vue.js"></script>
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    <!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
